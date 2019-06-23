@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</head>
+<body>
+  <header>
+    <secion class="row mt20 mb20">
+      <span class="col-1 mr20 ml10">
+        <a href="index.html"><img src="img/logo.jpg" alt="logo" width="140" height="100"></a>
+      </span>
+      <form class="col-3 headerSection ml20" id="searchForm" method="post">
+          <input type="text" placeholder="Search.." name="searchKey">
+          <button id="searchBtn" type="button" class="pointer" onclick="window.location.href='main.html'">
+            <img src="img/search.png" width="20" height="20">
+          </button>
+      </form>
+      <div class="col-3 headerSection">
+        <span class="mission">5 star only for you</span>
+      </div>
+      <div class="col-1 headerSection ml20">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='about.html'">
+          About
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='price.html'">
+          Price
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" disabled>
+          Be chef
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" disabled>
+          My Page
+        </button>
+      </div>
+    </section>
+  </header>
+    <hr>
+  <div id="mainContainer">
+
+    <div class="row mt20 mb20 aboutSection">
+
+        <div class="col-12"><h3 class="italic bold">What is IAC ?</h3></div>
+        <section>I Am Chef ( I A C ) is an online-based catering service where people can enjoy professional and fine dishes at home.<br>
+        You can select any chef you want and order catering to receive 5 star service ! !<br>
+        Promise providing a unique and memorable experience for you<br>
+        <span class="italic red">We will be the best customised catering service in Australia.</span>
+        </section>
+
+    </div>
+  <hr>
+    <div class="row mt20 mb20 aboutSection">
+      <div class="col-12"><h3 class="italic bold">IAC History</h3></div>
+      <table>
+        <tr>
+          <td class="txt_center pl20 pr20">December 2017</td>
+          <td class="pl10 pr10">Our executive team came up with base idea of IAC.</td>
+        </tr>
+        <tr>
+          <td class="txt_center">June 2018</td>
+          <td class="pl10">IAC test service</td>
+        </tr>
+        <tr>
+          <td class="txt_center">January 2019</td>
+          <td class="pl10">Official service will be launched</td>
+        </tr>
+      </table>
+    </div>
+    <hr>
+    <div class="row mt20 mb20 aboutSection">
+      <div class="col-12">
+          <div class="col-12 p0"><h3 class="italic bold">Customer Feedback</h3></div>
+      </div>
+      <div class="col-12">
+        <div class="col-12"><h5>We always welcome user's opinion ! ! </h5></div>
+      </div>
+      <div id="feedback" class="col-12 mt10">
+        <div class="row ml10">
+          <div class="col-2"><span class="fr">Mr J.M : </span></div>
+          <div class="col-10 pl0">It is really good system, and Chef quality is definigh high</div>
+        </div>
+      </div>
+      <div id="feedback" class="col-12 mt10">
+        <div class="row ml10">
+          <div class="col-2"><span class="fr">Ms A.R : </span></div>
+          <div class="col-10 pl0">You can receive greatful service, especially I like Japanese one.</div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+    <div class="container-fluid bg-grey pt20">
+    <h2 class="text-center italic bold pb20">CONTACT</h2>
+    <div class="row">
+      <div class="col-sm-5 txt_center">
+        <p>Contact us and we'll get back to you within 24 hours.</p>
+        <p><span class="glyphicon glyphicon-map-marker"></span> Brisbane, AUS</p>
+        <p><span class="glyphicon glyphicon-phone"></span> +61 0431111111</p>
+        <p><span class="glyphicon glyphicon-envelope"></span> iamchef@gmail.com</p>
+      </div>
+      <div class="col-sm-7">
+        <div class="row">
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="name" name="name" placeholder="Name" type="text" required>
+          </div>
+          <div class="col-sm-6 form-group">
+            <input class="form-control" id="email" name="email" placeholder="Email" type="email" required>
+          </div>
+        </div>
+        <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="5"></textarea><br>
+        <div class="row">
+          <div class="col-sm-12 form-group mr20">
+            <button class="btn btn-success pull-right" type="submit">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+  </div>
+
+
+  <footer class="mt20">
+    <div class="row mt10">
+      <div class="col-3">
+            <a href="index.html"><img src="img/footlog.png" alt="logo" width="200" height="100" style="margin-left: 20%;"></a>
+      </div>
+
+      <div class="col-9">
+        <div class="row">
+          <div class="col-2">
+            <a href="index.html">I A C</a>
+          </div>
+          <div class="col-2">
+            <a href="about.html">About</a>
+          </div>
+          <div class="col-2">
+            <a href="price.html">price</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col mt10">
+          &copy;Copyright 2018 - BISM2233 Group 24 : <a href="disclaimer.html">Disclaimer</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mt10 italic">This page is fictional. It is for assessment purposes only in the course of BISM2233, eBusiness systems and strategy, at The University of Queensland.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

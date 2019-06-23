@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>IAmChef</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<meta name="keywords" content="chef, cooking, five star">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <secion class="row mt20 mb20">
+      <span class="col-1 mr20 ml10">
+        <a href="index.html"><img src="img/logo.jpg" alt="logo" width="140" height="100"></a>
+      </span>
+      <form class="col-3 headerSection ml20 pr0" id="searchForm" method="post">
+          <input type="text" placeholder="Search.." name="searchKey">
+          <button id="searchBtn" type="button"  class="pointer" onclick="window.location.href='main.html'">
+            <img src="img/search.png" width="20" height="20">
+          </button>
+      </form>
+      <div class="col-2 headerSection p0">
+        <span class="mission">5 star only for you</span>
+      </div>
+      <div class="col-1 headerSection ml20">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='about.html'">
+          About
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='price.html'">
+          Price
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" disabled>
+          Be chef
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#signupModal">
+          Sign up
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#loginModal">
+          Log in
+        </button>
+      </div>
+    </section>
+  </header>
+<hr>
+
+  <div id="priceContainer">
+    <h1 class="txt_center mb20">Price List</h1>
+    <table id="price_table">
+      <tr>
+        <th>Number of people</th>
+        <th>Chef</th>
+        <th>Star Chef</th>
+      </tr>
+      <tr>
+        <td>2 - 3</td>
+        <td>&#36; 200</td>
+        <td>&#36; 300</td>
+      </tr>
+      <tr>
+        <td>4 - 6</td>
+        <td>&#36; 300</td>
+        <td>&#36; 400</td>
+      </tr>
+      <tr>
+        <td>7 - 10</td>
+        <td>&#36; 500</td>
+        <td>&#36; 600</td>
+      </tr>
+      <tr>
+        <td>10 +</td>
+        <td>Negotiable</td>
+        <td>Negotiable</td>
+      </tr>
+    </table>
+    <section id="cost_explanation" class="mt20">
+      <h4 class="italic"> * Price <span class="red">does not include</span> the cost of ingredients. The cost of ingredients is variable.</h4>
+      <p class="pl20">
+        The reason why we do not specify the cost of ingredients is that different users have different demands for their meal preferences, on which the cost of ingredients depend. So, the cost of ingredients is variable. A chef asks a customer about what is needed to meet the user’s preference. A chef then provides a receipt of the ingredients with the customer.
+      </p>
+    </secion>
+  </div>
+
+  <footer class="mt20">
+    <div class="row mt10">
+      <div class="col-3">
+          <a href="index.html"><img src="img/footlog.png" alt="logo" width="200" height="100" style="margin-left: 20%;"></a>
+      </div>
+
+      <div class="col-9">
+        <div class="row">
+          <div class="col-2">
+            <a href="index.html">I A C</a>
+          </div>
+          <div class="col-2">
+            <a href="about.html">About</a>
+          </div>
+          <div class="col-2">
+            <a href="price.html">price</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col mt10">
+          &copy;Copyright 2018 - BISM2233 Group 24 : <a href="disclaimer.html">Disclaimer</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mt10 italic">This page is fictional. It is for assessment purposes only in the course of BISM2233, eBusiness systems and strategy, at The University of Queensland.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script src="custom.js"></script>
+</body>
+
+</html>

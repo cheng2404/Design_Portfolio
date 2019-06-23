@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>IAmChef</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="chef, cooking, five star">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+</head>
+
+<body>
+  <header>
+    <secion class="row mt20 mb20">
+      <span class="col-1 mr20 ml10">
+        <a href="index.html"><img src="img/logo.jpg" alt="logo" width="140" height="100"></a>
+      </span>
+      <form class="col-3 headerSection ml20 pr0" id="searchForm" method="post">
+          <input type="text" placeholder="Search.." name="searchKey">
+          <button id="searchBtn" type="button" class="pointer" onclick="window.location.href='main.html'">
+            <img src="img/search.png" width="20" height="20">
+          </button>
+      </form>
+      <div class="col-2 headerSection p0">
+        <span class="mission">5 star only for you</span>
+      </div>
+      <div class="col-1 headerSection ml20">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='about.html'">
+          About
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='price.html'">
+          Price
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" disabled>
+          Be chef
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#signupModal">
+          Sign up
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#loginModal">
+          Log in
+        </button>
+      </div>
+    </section>
+  </header>
+
+  <hr>
+
+  <div id="mainContainer">
+
+    <nav id="navBar" class="row btn-group btn-group-toggle mb20" data-toggle="buttons">
+      <label class="mt10 mr20">Search By</label>
+      <button type="button" id="peopleBtn" class="btn btn-outline-success" data-toggle="collapse" data-target="#peopleSelector" aria-expanded="false" aria-controls="peopleSelector">People</button>
+      <button type="button" id="genreBtn" class="ml20 btn btn-outline-success" data-toggle="collapse" data-target="#genreSelector" aria-expanded="false" aria-controls="genreSelector">Genre</button>
+    </nav>
+    <!--Search dialog for three buttons -->
+    <div id="collapseGroup" class="w50p">
+      <div class="collapse" id="peopleSelector">
+        <div class="card card-body">
+          <div class="row">
+          <div class="col-2"><label class="fl mt10">People:</label></div>
+           <select class="form-control mt5 col-1" name="people">
+             <option>2</option>
+             <option>3</option>
+             <option>4</option>
+             <option>5</option>
+             <option>6</option>
+             <option>7</option>
+             <option>8</option>
+             <option>9</option>
+             <option>10+</option>
+           </select>
+           <div class="col-8"><button type="button" class="btn btn-primary mt5 fr" onclick="window.location.href='main.html'">Apply</button></div>
+         </div>
+        </div>
+      </div>
+      <div class="collapse" id="genreSelector">
+        <div class="card card-body">
+          <div class="row">
+          <div class="col-2"><label class="fl mt10">Genre:</label></div>
+           <select class="form-control mt5 col-5" name="people">
+             <option></option>
+             <option>General</option>
+             <option>Italian</option>
+             <option>Chinese</option>
+             <option>Japanese</option>
+             <option>Thai</option>
+             <option>India</option>
+             <option>French</option>
+             <option>German</option>
+             <option>Spanish</option>
+             <option>Korean</option>
+           </select>
+           <div class="col-5"><button type="button" class="btn btn-primary mt5 fr" onclick="window.location.href='main.html'">Apply</button></div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="starChefs">
+      <div class="starChef" class="mt10">
+
+        <div class="row">
+          <div class="col-5">
+            <h2 class="italic bold">Star Chef</h2>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row starChefSection">
+          <div class="col-3">
+            <img src="img/star1.jpg" class="img-thumbnail" alt="Cinque Terre">
+          </div>
+          <div class="col-6">
+              <div class="row">
+                  <div class="col-6">
+                    <h3>Daniel Boulud</h3>
+                  </div>
+                  <div class="col-2">
+                    <div class="starChefBtn">Star</div>
+                  </div>
+                  <div class="col-3">
+                    <span class="pointer"><img src="img/heart.png" alt="like" width="20%;" class="mt10 fr"></span>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="mb10 ml20">
+                   <span class="italic">Genre: Spainsh</span>
+                </div>
+              </div>
+                <div id="description" class="row content">
+                <p>
+                  Boulud is a Fully Qualified chef with 16 years experience in the industry.
+                  I have cooked in various locations around the globe such as Spain, England and
+                  India and worked in some of the worlds most well-known hotels and resorts such
+                  as 'the Shangri-La hotel' Cairns and La Manga Club golf resort in Murcia, Spain.
+                  I am now settled in Brisbane and join I Am Chef a year ago. I have a Brisbane
+                  Food license, police checks and public liability insurance for your peace of mind.
+                  And hope to prove a wonderful meal to your. Thanks!!!
+                </p>
+                </div>
+                <span class="ml20 mt20 bold">Overall Rate</span>
+              <div class="row">
+                <div class="col-4 mt5 pl30">
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                </div>
+                <div class="col-1 pl0">
+                  <h3>4.8</h3>
+                </div>
+                <div class="col-5"></div>
+                <div class="col-1">
+                  <a href="order.html"><button type="button" class="btn btn-success">order</button></a>
+                </div>
+              </div>
+          </div>
+          <div class="col-3">
+              <img src="img/food3.jpg" width="300" height="150" class="img-thumbnail" alt="Cinque Terre">
+              <img src="img/food2.jpg" width="300" height="150" class="img-thumbnail" alt="Cinque Terre">
+          </div>
+        </div>
+
+        <div class="row starChefSection">
+          <div class="col-3">
+            <img src="img/star2.jpg" class="img-thumbnail" alt="Cinque Terre">
+          </div>
+          <div class="col-6">
+              <div class="row">
+                  <div class="col-6">
+                    <h3>Curtis Duffy</h3>
+                  </div>
+                  <div class="col-2">
+                    <div class="starChefBtn">Star</div>
+                  </div>
+                  <div class="col-3">
+                    <span class="pointer"><img src="img/heart.png" alt="like" width="20%;" class="mt10 fr"></span>
+                  </div>
+              </div>
+              <div class="row">
+                <div class="mb10">
+                   <span class="italic ml20">Genre: Italian</span>
+                </div>
+              </div>
+                <div id="description" class="row content">
+                <p>
+                  Hi, I am Duffy!! I have been a star chef in the I Am Chef, I like to
+                  share this experience with yours, and hope we can make friends after your
+                  cooking. That me make a fresh meal for your
+                  family and friedns. It must be a wonderful experience for your family in your life,
+                  I am good at the traditional Australia meal, also
+                  can do some English or Thai food for your. Hope you get your invite!! Best wish.
+
+                </p>
+                </div>
+                <span class="ml20 mt20 bold">Overall Rate</span>
+              <div class="row">
+                <div class="col-4 mt5 pl30">
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <div class="col-1 pl0">
+                  <h3>4.2</h3>
+                </div>
+                <div class="col-5"></div>
+                <div class="col-1">
+                  <a href="order.html"><button type="button" class="btn btn-success">order</button></a>
+                </div>
+              </div>
+
+          </div>
+          <div class="col-3">
+              <img src="img/food9.jpg" width="300" height="150" class="img-thumbnail" alt="Cinque Terre">
+              <img src="img/food8.jpg" width="300" height="150" class="img-thumbnail" alt="Cinque Terre">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="cookingClass mb20">
+      <div class="row">
+        <div class="row">
+          <div class="col-12 mt20">
+            <h2 class="italic bold">Cooking Class</h2>
+          </div>
+        </div>
+        <div class="row">
+        <div class="col-4">
+          <div class="row">
+            <div class="col-12">
+              <img src="img/food4.jpg" width="90%;" class="img-thumbnail" alt="food4">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h4>Happy Kitchen</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mt5">
+              <h6>About price: <span class="underline">&#36; 50</span></h6>
+              </div>
+            <div class="col-3.5">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1 mt5">
+              <h6 class="underline">3.2</h6>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="row">
+            <div class="col-12">
+              <img src="img/food5.jpg"  width="90%;" class="img-thumbnail" alt="food5">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 p0">
+              <h4>Korean Bibimbap</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mt5">
+              <h6>About price: <span class="underline">&#36; 65</span></h6>
+            </div>
+            <div class="col-3.5">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1 mt5">
+              <h6 class="underline">4.1</h6>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="row">
+            <div class="col-12">
+              <img src="img/food6.jpg"  width="90%;" class="img-thumbnail" alt="food6">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h4>Kitchen Salaed</h4>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-6 mt5">
+              <h6>About price: <span class="underline">&#36; 60</span></h6>
+            </div>
+            <div class="col-3.5">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1 mt5">
+              <h6 class="underline">3.6</h6>
+            </div>
+            <div class="col-1"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+  </div>
+
+  <footer class="mt20">
+    <div class="row mt10">
+      <div class="col-3">
+          <img src="img/footlog.png" alt="logo" width="200" height="100" style="margin-left: 20%;">
+      </div>
+
+      <div class="col-9">
+        <div class="row">
+          <div class="col-2">
+            <a href="index.html">I A C</a>
+          </div>
+          <div class="col-2">
+            <a href="about.html">About</a>
+          </div>
+          <div class="col-2">
+            <a href="price.html">price</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col mt10">
+          &copy;Copyright 2018 - BISM2233 Group 24 : <a href="disclaimer.html">Disclaimer</a>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-12">
+            <p class="mt10 italic">This page is fictional. It is for assessment purposes only in the course of BISM2233, eBusiness systems and strategy, at The University of Queensland.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="mauto txt_center"><h5 class="modal-title pl20" id="signupTitle">
+          Welcome to I Am Chef !!</h5></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" method="post" class="w80p mauto txt_center">
+          <input name="email" type="email" id="email" placeholder="Email Address" required></input>
+          <input name="fname" type="text" id="fname" placeholder="First Name" required></input>
+          <input name="lname" type="text" id="lname" placeholder="Last Name" required></input>
+          <input name="pws" type="password" id="pws" minlength="8" placeholder="Your password" required></input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="mauto txt_center"><h5 class="modal-title pl20" id="signupTitle">
+          Welcome to I Am Chef !!</h5></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" method="post" class="w80p mauto txt_center">
+          <input name="email" type="email" id="email" placeholder="Email Address" required></input>
+          <input name="pws" type="password" id="pws" minlength="8" placeholder="Your password" required></input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Log in</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="custom.js"></script>
+
+</body>

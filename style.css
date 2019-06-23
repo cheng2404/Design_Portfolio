@@ -1,0 +1,165 @@
+@media screen{
+
+body{
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 14pt;
+}
+
+.toggle.onOff, .toggle-on.onOff, .toggle-off.onOff { border-radius: 20px; }
+.toggle.onOff .toggle-handle { border-radius: 20px; }
+
+header .btn{
+  color: #000000;
+}
+
+header div , header form{
+  margin-top: 30px;
+}
+
+footer {
+  border-top: 2px solid #cccccc;
+}
+
+.mission {
+  font-family: 'Lobster', cursive;
+  font-size: 20pt;
+}
+
+#signupForm input{
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+#mainContainer {
+  width: 85%;
+  margin-left: auto;;
+  margin-right: auto;
+}
+
+.starChef img{
+  margin:3%;
+}
+
+.starChefBtn{
+  color:#FFDF00;
+  background-color:black;
+  margin-top:10%;
+  margin-left:1px;
+  border-radius: 10%;
+  padding: 4%;
+  width:90%;
+  text-align: center;
+  font-size: 14px;
+}
+
+.starchecked {
+  color: orange;
+}
+
+.starChef div #description{
+  width:100%;
+  height:50%;
+  margin:1%;
+  overflow:auto;
+  border:1px solid none;
+}
+
+.starChef .starChefSection {
+  border-bottom : 2px solid #cccccc;
+  margin-top: 10px;
+}
+
+.cookingClass div h4{
+  text-align: center;
+}
+
+.cookingClass div h6{
+  text-align: center;
+}
+
+.cookingClass div img{
+  margin:5%;
+}
+
+#orderContainer{
+  width: 800px;
+  border: 2px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#orderContainer h1{
+  border-bottom: 1px solid #cccccc;
+  padding: 10px 0px;
+}
+
+#priceContainer {
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#price_table {
+  width: 800px;
+  border: 2px solid #cccccc;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  font-size: 20pt;
+}
+
+#price_table tr {
+  border-top: 2px solid #cccccc;
+  border-bottom: 2px solid #cccccc;
+  height: 100px;
+}
+
+#price_table td {
+  width: 33%;
+}
+
+#price_table td:nth-child(2), #price_table th:nth-child(2) {
+  border-right: 2px solid #cccccc;
+  border-left: 2px solid #cccccc;
+}
+
+#cost_explanation p{
+  font-size: 14pt;
+}
+
+#Atitle h1{
+	text-align: center;
+}
+
+
+.mapcon{
+  width:100%;
+  height:800px;
+  margin:1%;
+  overflow:auto;
+  border:1px solid none;
+}
+
+.btntext{
+	background:none;
+    border:none;
+    margin:0;
+    padding:0;
+}
+
+.aboutSection section, .aboutSection table {
+  margin-left: 50px;
+}
+
+.aboutSection table,th, td{
+  border: 1px solid black;
+  padding:5px;
+}
+
+#disclaimerContainer div {
+  height: 350px;
+}
+
+}

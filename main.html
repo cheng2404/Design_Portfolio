@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<style>
+#map{
+  height:800px;
+  width:100%;
+}
+</style>
+<html lang="en">
+<head>
+<title>More</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<meta name="keywords" content="chef, cooking, five star">
+<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="common.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
+<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <header>
+    <secion class="row mt20 mb20">
+      <span class="col-1 mr20 ml10">
+        <a href="index.html"><img src="img/logo.jpg" alt="logo" width="140" height="100"></a>
+      </span>
+      <form class="col-3 headerSection ml20 pr0" id="searchForm" method="post">
+          <input type="text" placeholder="Search.." name="searchKey">
+          <button id="searchBtn" type="button"  class="pointer" onclick="window.location.href='main.html'">
+            <img src="img/search.png" width="20" height="20">
+          </button>
+      </form>
+      <div class="col-2 headerSection p0">
+        <span class="mission">5 star only for you</span>
+      </div>
+      <div class="col-1 headerSection ml20">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='about.html'">
+          About
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" onclick="window.location.href='price.html'">
+          Price
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" disabled>
+          Be chef
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#signupModal">
+          Sign up
+        </button>
+      </div>
+      <div class="col-1 headerSection">
+        <button type="button" class="btn btn-link p0 b_none" data-toggle="modal" data-target="#loginModal">
+          Log in
+        </button>
+      </div>
+    </section>
+  </header>
+
+  <hr>
+
+  <div id="mainContainer">
+
+    <nav id="navBar" class="row btn-group btn-group-toggle mb20" data-toggle="buttons">
+      <label class="mt10 mr20">Search By</label>
+      <button type="button" id="peopleBtn" class="btn btn-outline-success" data-toggle="collapse" data-target="#peopleSelector" aria-expanded="false" aria-controls="peopleSelector">People</button>
+      <button type="button" id="genreBtn" class="ml20 btn btn-outline-success" data-toggle="collapse" data-target="#genreSelector" aria-expanded="false" aria-controls="genreSelector">Genre</button>
+    </nav>
+    <!--Search dialog for three buttons -->
+    <div id="collapseGroup" class="w50p">
+      <div class="collapse" id="peopleSelector">
+        <div class="card card-body">
+          <div class="row">
+          <div class="col-2"><label class="fl mt10">People:</label></div>
+           <select class="form-control mt5 col-1" name="people">
+             <option>2</option>
+             <option>3</option>
+             <option>4</option>
+             <option>5</option>
+             <option>6</option>
+             <option>7</option>
+             <option>8</option>
+             <option>9</option>
+             <option>10+</option>
+           </select>
+           <div class="col-8"><button type="button" class="btn btn-primary mt5 fr">Apply</button></div>
+         </div>
+        </div>
+      </div>
+      <div class="collapse" id="genreSelector">
+        <div class="card card-body">
+          <div class="row">
+          <div class="col-2"><label class="fl mt10">Genre:</label></div>
+           <select class="form-control mt5 col-5" name="people">
+             <option></option>
+             <option>General</option>
+             <option>Italian</option>
+             <option>Chinese</option>
+             <option>Japanese</option>
+             <option>Thai</option>
+             <option>India</option>
+             <option>French</option>
+             <option>German</option>
+             <option>Spanish</option>
+             <option>Korean</option>
+           </select>
+           <div class="col-5"><button type="button" class="btn btn-primary mt5 fr">Apply</button></div>
+         </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="starChefs">
+      <div class="starChef" class="mt10">
+        <div class="row">
+          <div class="col-5">
+            <h2 class="italic bold">Star Chef</h2>
+          </div>
+        </div>
+
+      <hr>
+
+        <div class="row starChefSection">
+          <div class="col-3">
+            <img src="img/JP1.jpg" class="img-thumbnail" alt="chef picture">
+          </div>
+          <div class="col-6">
+              <div class="row">
+                  <div class="col-6">
+                    <h3>Takayuki Oshima </h3>
+                  </div>
+                  <div class="col-2">
+                    <div class="starChefBtn">Star</div>
+                  </div>
+                  <div class="col-3">
+                    <img src="img/heart.png" alt="like" width="20%;" class="mt10 fr">
+                  </div>
+              </div>
+              <div class="row">
+                <div class="mb10">
+                   <span class="italic ml20">Japanese Cuisine</span>
+                </div>
+              </div>
+              <div id="description" class="row content">
+                <p>
+                  Hello Eveyone! I am Takayuki from Japan. I am stay in Brisbane now, I have been studied japanese
+                  cuisine 5 year in Tokyo. If you want to eat the fresh japanese cuisine please send me email, Please booking before
+                  two days, I can prepare the fresh fish, prawn and vegetables for your. I hope we can be a
+                  good friends with your family in the food and culture.  See you soon !
+                </p>
+              </div>
+              <div class="row">
+                <div class="col-4 mt5 pl30">
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star starchecked pr5"></span>
+                  <span class="fa fa-star"></span>
+                </div>
+                <div class="col-1 pl0">
+                  <h3>4.2</h3>
+                </div>
+                <div class="col-5"></div>
+                <div class="col-1">
+                  <a href="order.html"><button type="button" class="btn btn-success">order</button></a>
+                </div>
+              </div>
+
+          </div>
+
+          <div class="col-3">
+              <img src="img/JP22.jpg" width="300" height="150" class="img-thumbnail" alt="FOOD1 example">
+              <img src="img/JP3.jpg" width="300" height="150" class="img-thumbnail" alt="FOOD2 example">
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+<!-- General Chef part -->
+  <div class="row mt15">
+    <div class="col-5">
+      <h2 class="italic bold">Chef</h2>
+    </div>
+  </div>
+
+
+
+<div class="row">
+
+  <div class="col-8" >
+    <div class="row mapcon">
+      <div class="row">
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel1" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel1" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel1" data-slide-to="1"></li>
+                  <li data-target="#carousel1" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active" >
+                    <a href=""><img class="d-block w-100" src="img/p1.jpg"  width="100%;"  height="230px" alt="First slide my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f1.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f2.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel1" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel1" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Song Kings</h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Korean</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>3.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+
+
+
+
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel2" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel2" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel2" data-slide-to="1"></li>
+                  <li data-target="#carousel2" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" width="400px;"  height="230px">
+                    <div class="carousel-item active">
+                      <a href=""><img class="d-block w-100" src="img/p2.jpg" width="100%;"  height="230px" alt="First slide my self picture"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href=""><img class="d-block w-100" src="img/f3.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href=""><img class="d-block w-100" src="img/f4.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carousel2" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel2" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Sandy Momo </h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Indian</I> </h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>4.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-6" >
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel3" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel3" data-slide-to="1"></li>
+                  <li data-target="#carousel3" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href=""><img class="d-block w-100" src="img/p3.jpg" width="100%;"  height="230px" alt="First slide  my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f5.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f6.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel3" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel3" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Kota Ayumu </h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Japanese</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star "></span>
+            </div>
+            <div class="col-1">
+              <h5>4.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+        <div class="col-6" >
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel4" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel4" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel4" data-slide-to="1"></li>
+                  <li data-target="#carousel4" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href=""><img class="d-block w-100" src="img/p4.jpg" width="100%;"  height="230px" alt="First slide  my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f7.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f8.jpg"  width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel4" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel4" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Daniel Wang </h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Chinese</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>4.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="row">
+
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel8" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel8" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel8" data-slide-to="1"></li>
+                  <li data-target="#carousel8" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href=""><img class="d-block w-100" src="img/p5.jpg" width="100%;"  height="230px" alt="First slide my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f9.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f10.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel8" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel8" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Alice Arden</h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Muslim</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>3.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-6" >
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel5" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel5" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel5" data-slide-to="1"></li>
+                  <li data-target="#carousel5" data-slide-to="2"></li>
+                </ol>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active">
+                      <a href=""><img class="d-block w-100" src="img/p6.jpg"  width="100%;"  height="230px" alt="First slide my self picture"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href=""><img class="d-block w-100" src="img/f11.jpg"  width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href=""><img class="d-block w-100" src="img/f12.jpg"  width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carousel5" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carousel5" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>David Jones </h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Australian</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+            </div>
+            <div class="col-1">
+              <h5>5.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-6" >
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel6" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel6" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel6" data-slide-to="1"></li>
+                  <li data-target="#carousel6" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href=""><img class="d-block w-100" src="img/p7.jpg"  width="100%;"  height="230px" alt="First slide my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f13.jpg" width="100%;"  height="230px" alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f14.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel6" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel6" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3>Hu Zhi </h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5><I>Genre: Thai</I></h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>3.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+
+
+
+        <div class="col-6">
+          <div class="row">
+            <div class="col-12 mt10">
+              <div id="carousel7" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                  <li data-target="#carousel7" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel7" data-slide-to="1"></li>
+                  <li data-target="#carousel7" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <a href=""><img class="d-block w-100" src="img/p8.jpg" width="100%;"  height="230px"  alt="First slide my self picture"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f15.jpg"  width="100%;"  height="230px"alt="Second slide my dish one"></a>
+                  </div>
+                  <div class="carousel-item">
+                    <a href=""><img class="d-block w-100" src="img/f16.jpg" width="100%;"  height="230px" alt="Third slide my dish two"></a>
+                  </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel7" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel7" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-12">
+              <button class="btntext"><h3><I>Alejandro Alec</I></h3></button>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <h5>Genre: spanish </h5>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-4">
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star starchecked"></span>
+              <span class="fa fa-star"></span>
+              <span class="fa fa-star"></span>
+            </div>
+            <div class="col-1">
+              <h5>3.0</h5>
+            </div>
+            <div class="col-7"></div>
+          </div>
+        </div>
+      </div>
+    </div><!--left side in side div-->
+  </div>  <!-- close left side-->
+
+  <div class="col-4 p0">
+    <div id="map">
+
+
+      <script>
+        function initMap() {
+          var lc = {lat: -27.475847,lng: 153.022278};
+          var lc2 = {lat: -27.575847,lng: 153.122278};
+          var lc3 = {lat: -27.57847,lng: 153.11};
+          var lc4 = {lat: -27.47847,lng: 153.13331};
+          var lc5 = {lat: -27.46847,lng: 153.14331};
+          var lc6 = {lat: -27.45847,lng: 152.99131};
+          var lc7 = {lat: -27.6847,lng: 152.99131};
+          var lc8 = {lat: -27.1847,lng: 152.99131};
+          var lc9 = {lat: -27.512697,lng: 153.053006};
+          var map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 11,
+            center: lc
+          });
+          var marker = new google.maps.Marker({
+            position: lc,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc2,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc3,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc4,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc5,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc6,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc7,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc8,
+            map: map
+          });
+          var marker = new google.maps.Marker({
+            position: lc9,
+            map: map
+          });
+        }
+      </script>
+      <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA6bqYcEkrvlseiH-_9CZeiOQFMV9aWGIY&callback=initMap">
+      </script>
+    </div>
+
+  </div>
+</div>
+
+<!--footer-->
+<footer class="mt20">
+  <div class="row mt10">
+    <div class="col-3">
+          <a href="index.html"><img src="img/footlog.png" alt="logo" width="200" height="100" style="margin-left: 20%;"></a>
+    </div>
+
+    <div class="col-9">
+      <div class="row">
+        <div class="col-2">
+          <a href="index.html">I A C</a>
+        </div>
+        <div class="col-2">
+          <a href="about.html">About</a>
+        </div>
+        <div class="col-2">
+          <a href="price.html">price</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col mt10">
+        &copy;Copyright 2018 - BISM2233 Group 24 : <a href="disclaimer.html">Disclaimer</a>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-12">
+          <p class="mt10 italic">This page is fictional. It is for assessment purposes only in the course of BISM2233, eBusiness systems and strategy, at The University of Queensland.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="mauto txt_center"><h5 class="modal-title pl20" id="signupTitle">
+          Welcome to I Am Chef !!</h5></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" method="post" class="w80p mauto txt_center">
+          <input name="email" type="email" id="email" placeholder="Email Address" required></input>
+          <input name="fname" type="text" id="fname" placeholder="First Name" required></input>
+          <input name="lname" type="text" id="lname" placeholder="Last Name" required></input>
+          <input name="pws" type="password" id="pws" minlength="8" placeholder="Your password" required></input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Sign up</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="mauto txt_center"><h5 class="modal-title pl20" id="signupTitle">
+          Welcome to I Am Chef !!</h5></div>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form id="signupForm" method="post" class="w80p mauto txt_center">
+          <input name="email" type="email" id="email" placeholder="Email Address" required></input>
+          <input name="pws" type="password" id="pws" minlength="8" placeholder="Your password" required></input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Log in</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="custom.js"></script>
+
+</body>
